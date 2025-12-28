@@ -1,12 +1,8 @@
 import onnxruntime as ort
 import numpy as np
 from PIL import Image
-import os
-import math
+import os, math, sys
 
-# Your paths
-model_path = r"C:\<path to model.onnx>"
-img_path   = r"C:\<path to image>"
 
 TILE = 128
 OVERLAP = 16
@@ -85,6 +81,9 @@ def upscale_image_tiled(model_path, input_path):
     output.save(out_path)
     print(f"Upscaled image saved to: {out_path}")
 
+    # Automatically open the file
+    os.startfile(out_path)
+
 # Run it
 if __name__ == "__main__":
     if len(sys.argv) != 3:
@@ -95,4 +94,3 @@ if __name__ == "__main__":
     img_path = sys.argv[2]
 
     upscale_image_tiled(model_path, img_path)
-
