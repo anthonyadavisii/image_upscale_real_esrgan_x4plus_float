@@ -86,4 +86,13 @@ def upscale_image_tiled(model_path, input_path):
     print(f"Upscaled image saved to: {out_path}")
 
 # Run it
-upscale_image_tiled(model_path, img_path)
+if __name__ == "__main__":
+    if len(sys.argv) != 3:
+        print("Usage: python image_upscale_stitch.py <model.onnx> <image_path>")
+        sys.exit(1)
+
+    model_path = sys.argv[1]
+    img_path = sys.argv[2]
+
+    upscale_image_tiled(model_path, img_path)
+
