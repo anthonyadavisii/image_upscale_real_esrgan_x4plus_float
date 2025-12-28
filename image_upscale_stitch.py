@@ -5,8 +5,8 @@ import os
 import math
 
 # Your paths
-model_path = r"C:\Users\v7dav\ai-env\models\Computer_Vision\real_esrgan_x4plus_float.onnx\job_j57xqwqng_optimized_onnx\model.onnx"
-img_path   = r"C:\Users\v7dav\ai-env\Images\nature.jpg"
+model_path = r"C:\<pagh to model>"
+img_path   = r"C:\<path to image"
 
 TILE = 128
 OVERLAP = 16
