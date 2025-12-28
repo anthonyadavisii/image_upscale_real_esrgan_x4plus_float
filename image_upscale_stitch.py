@@ -4,9 +4,9 @@ from PIL import Image
 import os
 import math
 
-# Your paths
-model_path = r"C:\<pagh to model>"
-img_path   = r"C:\<path to image"
+# Model and image dir
+model_path = input("Enter path to model.onnx: ").strip('"').strip()
+img_path   = input("Enter path to input image: ").strip('"').strip()
 
 TILE = 128
 OVERLAP = 16
