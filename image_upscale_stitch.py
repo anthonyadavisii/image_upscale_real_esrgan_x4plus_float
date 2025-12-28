@@ -1,8 +1,12 @@
 import onnxruntime as ort
 import numpy as np
 from PIL import Image
-import os, math, sys
+import os
+import math
 
+# Your paths
+model_path = r"C:\Users\v7dav\ai-env\models\Computer_Vision\real_esrgan_x4plus_float.onnx\job_j57xqwqng_optimized_onnx\model.onnx"
+img_path   = r"C:\Users\v7dav\ai-env\Images\nature.jpg"
 
 TILE = 128
 OVERLAP = 16
@@ -81,16 +85,5 @@ def upscale_image_tiled(model_path, input_path):
     output.save(out_path)
     print(f"Upscaled image saved to: {out_path}")
 
-    # Automatically open the file
-    os.startfile(out_path)
-
 # Run it
-if __name__ == "__main__":
-    if len(sys.argv) != 3:
-        print("Usage: python image_upscale_stitch.py <model.onnx> <image_path>")
-        sys.exit(1)
-
-    model_path = sys.argv[1]
-    img_path = sys.argv[2]
-
-    upscale_image_tiled(model_path, img_path)
+upscale_image_tiled(model_path, img_path)
